@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cinema: one
+  name: MyString
+  seat_capacity: 1
+
+two:
+  cinema: two
+  name: MyString
+  seat_capacity: 1

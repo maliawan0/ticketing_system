@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  bookable: one (ShowTime)
+  status: 1
+  total_price: 9.99
+
+two:
+  user: two
+  bookable: two (ShowTime)
+  status: 1
+  total_price: 19.99

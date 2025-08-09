@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TicketingSystem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav>
+      <% if user_signed_in? %>
+        <p>Signed in as: <%= current_user.email %></p>
+        <%= link_to 'My Bookings', bookings_path %> |
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, form: { style: "display: inline;" } %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path %> |
+        <%= link_to 'Sign Up', new_user_registration_path %>
+      <% end %>
+    </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+  </body>
+</html>

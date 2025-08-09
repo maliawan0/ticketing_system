@@ -1,0 +1,40 @@
+<h1>Booking Details</h1>
+
+<p><strong>Reference:</strong> <%= @booking.booking_reference %></p>
+<p><strong>Status:</strong> <%= @booking.status.titleize %></p>
+<p><strong>Total Price:</strong> $<%= @booking.total_price %></p>
+<p><strong>Show Info:</strong> <%= @booking.bookable.display_info %></p>
+
+<h2>Tickets</h2>
+<% if @tickets.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Seat Number</th>
+        <th>Seat Type</th>
+        <th>Row</th>
+        <th>Column</th>
+        <th>Screen</th>
+        <th>Cinema</th>
+        <th>Area</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.seat.seat_number %></td>
+          <td><%= ticket.seat.seat_type.titleize %></td>
+          <td><%= ticket.seat.row %></td>
+          <td><%= ticket.seat.column %></td>
+          <td><%= ticket.seat.screen.name %></td>
+          <td><%= ticket.seat.screen.cinema.name %></td>
+          <td><%= ticket.seat.screen.cinema.area.name %></td>
+          <td><%= ticket.seat.screen.cinema.area.location.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No tickets found for this booking.</p>
+<% end %>
